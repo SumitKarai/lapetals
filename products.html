@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | La Petals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDark: '#0B2B26',
+                        emeraldLight: '#163E36',
+                        gold: '#D4AF37',
+                        goldHover: '#AA8C2C',
+                        creme: '#FAF6EE',
+                        cremeDark: '#F3EBDD',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-creme text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Header / Navigation -->
+    <header class="bg-emeraldDark text-creme border-b-2 border-gold sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-3xl font-serif font-bold text-gold tracking-wider">La Petals</a>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-gold transition font-medium">Home</a>
+                <a href="products.html" class="text-gold hover:text-gold transition font-medium">Products</a>
+                <a href="about.html" class="hover:text-gold transition font-medium">About Us</a>
+                <a href="contact.html" class="hover:text-gold transition font-medium">Contact</a>
+            </nav>
+            <div class="text-xs border border-gold px-3 py-1 rounded text-gold hidden sm:block">
+                GMP Certified
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="md:hidden text-gold focus:outline-none ml-auto sm:ml-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Drawer Navigation Menu -->
+    <div id="drawerMenu"
+        class="fixed inset-y-0 right-0 w-64 bg-emeraldDark shadow-xl transform translate-x-full transition-transform duration-300 z-[60] flex flex-col">
+        <div class="p-4 flex justify-between items-center border-b border-gold/30">
+            <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+            <button id="closeMenuBtn" class="text-creme focus:outline-none hover:text-gold transition">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4 text-sm uppercase tracking-widest mt-4">
+            <a href="index.html"
+                class="text-creme hover:text-gold transition font-medium border-b border-gold/10 pb-2">Home</a>
+            <a href="products.html"
+                class="text-creme hover:text-gold transition font-medium border-b border-gold/10 pb-2">Products</a>
+            <a href="about.html"
+                class="text-creme hover:text-gold transition font-medium border-b border-gold/10 pb-2">About Us</a>
+            <a href="contact.html"
+                class="text-creme hover:text-gold transition font-medium border-b border-gold/10 pb-2">Contact</a>
+        </nav>
+    </div>
+    <!-- Drawer Overlay -->
+    <div id="drawerOverlay" class="fixed inset-0 bg-black/60 z-[55] hidden opacity-0 transition-opacity duration-300">
+    </div>
+
+    <main class="flex-grow bg-cremeDark/20 pb-20">
+        <!-- Page Header -->
+        <section class="bg-white py-16 border-b border-gold/20 mb-12 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <span class="text-gold font-semibold uppercase tracking-widest text-xs">Ayurvedic Formulations</span>
+                <h1 class="text-4xl font-serif text-emeraldDark font-bold mt-2">Our Complete Range</h1>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto font-light">Explore our premium line of strictly tested,
+                    GMP Certified herbal treatments designed for full-body wellness and secure healing.</p>
+            </div>
+        </section>
+
+
+        <section class="max-w-6xl mx-auto px-4 space-y-12">
+
+            <!-- Product 1: La Petals Face Wash -->
+            <div
+                class="bg-white rounded-xl overflow-hidden shadow-lg border border-gold/20 flex flex-col md:flex-row transform transition duration-300 hover:shadow-2xl">
+
+                <!-- Image Side -->
+                <div class="md:w-5/12 relative group overflow-hidden bg-creme flex items-center justify-center p-4">
+                    <img src="assests/facewash.jpeg" alt="La Petals Natural & Botanical Face Wash"
+                        class="w-full h-80 md:h-full object-contain transition-transform duration-700 group-hover:scale-105">
+                    <!-- Badge -->
+                    <span
+                        class="absolute top-4 left-4 bg-emeraldDark text-gold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md border border-gold/40">
+                        Skincare
+                    </span>
+                </div>
+
+                <!-- Content Side -->
+                <div class="md:w-7/12 p-8 md:p-10 flex flex-col justify-center">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <span
+                            class="text-emeraldLight font-semibold uppercase tracking-widest text-[10px] border border-emeraldLight/30 bg-emeraldLight/5 px-2 py-1 rounded">
+                            Skincare & Face Care
+                        </span>
+                        <span
+                            class="text-gold font-bold uppercase tracking-widest text-[10px] border border-gold/50 bg-gold/5 px-2 py-1 rounded flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            220 ml ℮ 7.4 fl. oz.
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl font-serif font-bold text-emeraldDark mb-1">Face Wash</h2>
+                    <p class="text-gold font-semibold text-xs tracking-widest uppercase mb-4">Natural & Botanical
+                        Formulation</p>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        A botanical facial cleanser designed for deep cleansing, oil control, and skin refreshing
+                        without drying. Crafted for all skin types using a blend of traditional Ayurvedic herbs and
+                        natural extracts.
+                    </p>
+
+                    <!-- Key Active Ingredients Badges -->
+                    <div class="mb-6">
+                        <h4 class="text-xs font-bold text-emeraldDark uppercase tracking-wider mb-2">Enriched With Pure
+                            Herbs:</h4>
+                        <div class="flex flex-wrap gap-1.5 text-[11px] text-gray-700">
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Daruhaldi</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Coco Butter</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Activated Charcoal</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Green Tea Extract</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Aloevera</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Sandal</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Reetha</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Jamun Leaves</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Tendu Patta</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Khas</span>
+                            <span class="bg-creme border border-gold/30 px-2 py-0.5 rounded">Gazer</span>
+                        </div>
+                    </div>
+
+                    <!-- Features Icons -->
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div
+                            class="flex flex-col items-center justify-center bg-white rounded-lg p-3 text-center border border-emeraldDark/10 hover:border-gold/50 transition">
+                            <svg class="w-6 h-6 text-emeraldDark mb-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-[10px] font-bold text-emeraldDark uppercase tracking-wider">Deep
+                                Cleansing</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center bg-white rounded-lg p-3 text-center border border-emeraldDark/10 hover:border-gold/50 transition">
+                            <svg class="w-6 h-6 text-emeraldDark mb-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            <span class="text-[10px] font-bold text-emeraldDark uppercase tracking-wider">Oil
+                                Control</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center justify-center bg-white rounded-lg p-3 text-center border border-emeraldDark/10 hover:border-gold/50 transition">
+                            <svg class="w-6 h-6 text-emeraldDark mb-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707">
+                                </path>
+                            </svg>
+                            <span class="text-[10px] font-bold text-emeraldDark uppercase tracking-wider">All Skin
+                                Types</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-gray-100">
+                        <button
+                            class="w-full sm:w-auto bg-emeraldDark text-gold font-bold uppercase tracking-widest text-sm px-10 py-3.5 rounded hover:bg-emeraldLight transition shadow-md">
+                            Ask for Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-emeraldDark text-creme border-t border-gold py-8 mt-12 w-full">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm space-y-2">
+            <p class="font-serif text-gold text-lg font-bold">La Petals</p>
+            <p class="text-creme/70 text-xs">Rajrajeshwari Lifescience Pvt. Ltd | All Rights Reserved.</p>
+            <p class="text-gold text-xs">Pure Herbs & Secure Remedy — GMP Certified</p>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const drawerMenu = document.getElementById('drawerMenu');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleMenu() {
+            const isClosed = drawerMenu.classList.contains('translate-x-full');
+            if (isClosed) {
+                drawerMenu.classList.remove('translate-x-full');
+                drawerOverlay.classList.remove('hidden');
+                setTimeout(() => drawerOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                drawerMenu.classList.add('translate-x-full');
+                drawerOverlay.classList.add('opacity-0');
+                setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+            drawerOverlay.addEventListener('click', toggleMenu);
+        }
+    </script>
+</body>
+
+</html>
