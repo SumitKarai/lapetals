@@ -51,14 +51,13 @@
     <header class="bg-emeraldDark/95 backdrop-blur-md text-creme border-b border-gold/30 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div
-                    class="w-10 h-10 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center group-hover:border-gold transition-colors duration-300">
-                    <span class="font-serif font-bold text-gold text-xl">LP</span>
-                </div>
+
                 <div class="flex flex-col">
-                    <span
-                        class="text-2xl font-serif font-bold text-gold tracking-wider group-hover:text-goldLight transition-colors">La
-                        Petals</span>
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                            class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                        <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+                    </a>
                     <span class="text-[9px] tracking-widest text-creme/60 uppercase font-sans">Rajrajeshwari
                         Lifescience</span>
                 </div>
@@ -94,7 +93,11 @@
     <div id="drawerMenu"
         class="fixed inset-y-0 right-0 w-72 bg-emeraldDark shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-[60] flex flex-col border-l border-gold/20">
         <div class="p-5 flex justify-between items-center border-b border-gold/20">
-            <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                    class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+            </a>
             <button id="closeMenuBtn" class="text-creme/70 hover:text-gold focus:outline-none transition">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -120,7 +123,6 @@
     <div id="drawerOverlay"
         class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[55] hidden opacity-0 transition-opacity duration-300">
     </div>
-
     <main class="flex-grow">
         <!-- Hero Banner Section -->
         <section class="relative bg-emeraldDark text-creme py-20 lg:py-28 overflow-hidden border-b border-gold/30">
@@ -132,15 +134,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest mb-6">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
-                        </path>
-                    </svg>
-                    Ayurvedic Excellence • Bhopal, India
-                </div>
+
                 <h1
                     class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-creme tracking-tight leading-tight max-w-4xl mx-auto">
                     Where Ancient Ayurveda Meets <span
@@ -389,13 +383,16 @@
             </div>
         </section>
     </main>
-
     <!-- Footer -->
     <footer class="bg-emeraldDark text-creme border-t border-gold/30 py-12 w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-gold/20">
                 <div>
-                    <h4 class="font-serif text-xl font-bold text-gold mb-2">La Petals</h4>
+                    <a href="index.html" class="flex items-center space-x-3 mb-3 group">
+                        <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                            class="w-10 h-10 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                        <span class="font-serif text-xl font-bold text-gold">La Petals</span>
+                    </a>
                     <p class="text-xs text-creme/70 leading-relaxed">Rajrajeshwari Lifescience Pvt. Ltd.<br>Bhopal,
                         Madhya Pradesh, India</p>
                 </div>
@@ -404,6 +401,7 @@
                     <ul class="space-y-2 text-xs text-creme/70">
                         <li><a href="index.html" class="hover:text-gold transition">Home Page</a></li>
                         <li><a href="products.html" class="hover:text-gold transition">Formulations & Products</a></li>
+                        <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
                         <li><a href="contact.html" class="hover:text-gold transition">Contact Us</a></li>
                     </ul>
                 </div>
