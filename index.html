@@ -6,25 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Petals | Premium Ayurvedic Medicine</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         emeraldDark: '#0B2B26',
+                        emeraldMedium: '#0B2B26',
                         emeraldLight: '#163E36',
                         gold: '#D4AF37',
+                        goldLight: '#F3E5AB',
                         goldHover: '#AA8C2C',
                         creme: '#FAF6EE',
                         cremeDark: '#F3EBDD',
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.3);
+        }
+    </style>
 </head>
 
-<body class="bg-creme text-gray-800 font-sans flex flex-col min-h-screen">
+<body class="bg-creme text-gray-800 font-sans flex flex-col min-h-screen selection:bg-gold selection:text-emeraldDark">
 
     <header class="bg-emeraldDark/95 backdrop-blur-md text-creme border-b border-gold/30 sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -46,6 +68,7 @@
                 <a href="index.html" class="text-gold border-b-2 border-gold py-1">Home</a>
                 <a href="products.html" class="hover:text-gold transition-colors py-1">Products</a>
                 <a href="about.html" class="hover:text-gold transition-colors py-1">About Us</a>
+                <a href="blog.html" class="hover:text-gold transition-colors py-1">Blog</a>
                 <a href="contact.html" class="hover:text-gold transition-colors py-1">Contact</a>
             </nav>
 
@@ -96,6 +119,7 @@
                 class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Products</a>
             <a href="about.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">About
                 Us</a>
+            <a href="blog.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Blog</a>
             <a href="contact.html"
                 class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Contact</a>
         </nav>
@@ -117,24 +141,38 @@
     <main class="flex-grow">
 
         <!-- Hero Section -->
-        <section class="relative text-creme py-32 border-b border-gold/30 flex items-center bg-cover bg-center"
+        <section
+            class="relative text-creme py-32 border-b border-gold/30 flex items-center bg-cover bg-center overflow-hidden"
             style="background-image: url('https://plus.unsplash.com/premium_photo-1726769198572-542339268a7f?q=80&w=839&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
             <div class="absolute inset-0 bg-emeraldDark/80"></div>
+            <div class="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none"></div>
+            <!-- Floating Decorative Glow Rings -->
+            <div class="rotate-ring" style="top: -60px; right: -60px; opacity: 0.3;"></div>
+            <div class="rotate-ring"
+                style="bottom: -80px; left: -80px; width: 400px; height: 400px; opacity: 0.2; animation-direction: reverse;">
+            </div>
+            <div
+                class="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none float-anim-slow">
+            </div>
+            <div
+                class="absolute -bottom-24 -left-24 w-80 h-80 bg-emeraldLight/30 rounded-full blur-3xl pointer-events-none float-anim">
+            </div>
             <div class="max-w-5xl mx-auto text-center px-4 relative z-10 w-full">
                 <span class="text-gold uppercase text-xs tracking-widest font-semibold">Pure Herbs & Secure
                     Remedy</span>
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-gold mt-2 mb-6">Premium Ayurvedic Medicine
+                <h1 class="text-4xl md:text-6xl font-serif font-bold mt-2 mb-6">
+                    <span class="text-shimmer">Premium Ayurvedic Medicine</span>
                 </h1>
                 <p class="text-lg md:text-xl text-creme/90 max-w-2xl mx-auto mb-10 font-light">
                     GMP Certified formulations crafted for complete Healthcare, Skincare & Haircare.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="products.html"
-                        class="inline-block bg-gold text-emeraldDark font-semibold px-8 py-3 rounded hover:bg-goldHover transition">
+                        class="inline-block bg-gold text-emeraldDark font-semibold px-8 py-3 rounded hover:bg-goldHover transition btn-ripple">
                         Explore Our Range
                     </a>
                     <a href="about.html"
-                        class="inline-block bg-transparent border border-gold text-gold font-semibold px-8 py-3 rounded hover:bg-gold hover:text-emeraldDark transition bg-emeraldDark/40 backdrop-blur-sm">
+                        class="inline-block bg-transparent border border-gold text-gold font-semibold px-8 py-3 rounded hover:bg-gold hover:text-emeraldDark transition bg-emeraldDark/40 backdrop-blur-sm btn-ripple">
                         Our Story
                     </a>
                 </div>
@@ -776,6 +814,7 @@
             drawerOverlay.addEventListener('click', toggleMenu);
         }
     </script>
+    <script src="animations.js"></script>
 </body>
 
 </html>

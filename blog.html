@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | La Petals - Rajrajeshwari Lifescience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDark: '#081F1B',
+                        emeraldMedium: '#0B2B26',
+                        emeraldLight: '#163E36',
+                        gold: '#D4AF37',
+                        goldLight: '#F3E5AB',
+                        goldHover: '#B89628',
+                        creme: '#FAF6EE',
+                        cremeDark: '#ECE3D0',
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-creme text-gray-800 font-sans flex flex-col min-h-screen selection:bg-gold selection:text-emeraldDark">
+
+    <!-- Header / Navigation -->
+    <header class="bg-emeraldDark/95 backdrop-blur-md text-creme border-b border-gold/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                    class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                <div class="flex flex-col">
+                    <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+                    <span class="text-[9px] tracking-widest text-creme/60 uppercase font-sans">Rajrajeshwari
+                        Lifescience</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-gold transition-colors py-1">Home</a>
+                <a href="products.html" class="hover:text-gold transition-colors py-1">Products</a>
+                <a href="about.html" class="hover:text-gold transition-colors py-1">About Us</a>
+                <a href="blog.html" class="text-gold border-b-2 border-gold py-1">Blog</a>
+                <a href="contact.html" class="hover:text-gold transition-colors py-1">Contact</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-3">
+                <span
+                    class="text-[11px] font-medium border border-gold/40 bg-gold/5 px-3 py-1.5 rounded-full text-gold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                    AYUSH Lic. MP/25D/24/1157
+                </span>
+            </div>
+
+            <button id="mobileMenuBtn" class="md:hidden text-gold hover:text-goldLight focus:outline-none"
+                aria-label="Toggle Navigation">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Drawer Navigation -->
+    <div id="drawerMenu"
+        class="fixed inset-y-0 right-0 w-72 bg-emeraldDark shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-[60] flex flex-col border-l border-gold/20">
+        <div class="p-5 flex justify-between items-center border-b border-gold/20">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                    class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                <span class="text-xl font-serif font-bold text-gold">La Petals</span>
+            </a>
+            <button id="closeMenuBtn" class="text-creme/70 hover:text-gold focus:outline-none transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col p-6 space-y-4 text-xs font-semibold uppercase tracking-widest">
+            <a href="index.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Home</a>
+            <a href="products.html"
+                class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Products</a>
+            <a href="about.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">About
+                Us</a>
+            <a href="blog.html" class="text-gold font-bold py-2 border-b border-gold/20">Blog</a>
+            <a href="contact.html"
+                class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Contact</a>
+        </nav>
+        <div class="mt-auto p-6 border-t border-gold/20 bg-emeraldMedium/50">
+            <span class="text-[10px] text-gold tracking-widest block uppercase font-semibold mb-1">Certifications</span>
+            <p class="text-xs text-creme/70">GMP Certified Facility</p>
+            <p class="text-xs text-creme/70">AYUSH Lic: MP/25D/24/1157</p>
+        </div>
+    </div>
+    <div id="drawerOverlay"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[55] hidden opacity-0 transition-opacity duration-300">
+    </div>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="relative bg-emeraldDark text-creme py-20 lg:py-24 overflow-hidden border-b border-gold/30">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-24 -left-24 w-96 h-96 bg-emeraldLight/50 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span
+                    class="text-xs font-semibold uppercase tracking-widest text-gold bg-gold/10 border border-gold/30 px-3 py-1 rounded-full">
+                    Knowledge & Wisdom
+                </span>
+                <h1
+                    class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-creme tracking-tight leading-tight max-w-3xl mx-auto">
+                    Insights from
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-goldLight to-gold">
+                        Ancient Wisdom
+                    </span>
+                </h1>
+                <p class="mt-6 text-base sm:text-lg text-creme/80 max-w-2xl mx-auto font-light leading-relaxed">
+                    Explore articles on Ayurveda, nano-phytosome technology, herbal wellness, and the science behind
+                    pure, effective formulations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+            <article
+                class="bg-white border border-gold/25 rounded-3xl overflow-hidden shadow-xl gold-glow flex flex-col lg:flex-row">
+                <div
+                    class="lg:w-5/12 bg-emeraldDark relative min-h-[240px] lg:min-h-full flex items-center justify-center">
+                    <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+                    <div class="relative z-10 text-center p-8">
+                        <span
+                            class="text-[10px] uppercase tracking-widest text-gold font-semibold border border-gold/40 px-3 py-1 rounded-full">
+                            Featured
+                        </span>
+                        <div class="mt-6 text-6xl text-gold/40 font-serif">✦</div>
+                    </div>
+                </div>
+                <div class="lg:w-7/12 p-8 sm:p-10 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                        <span class="text-gold font-semibold uppercase tracking-wider">Science & Ayurveda</span>
+                        <span>•</span>
+                        <time datetime="2026-08-15">15 Aug 2026</time>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-emeraldDark leading-snug mb-4">
+                        How Nano-Phytosome Technology Makes Ayurvedic Herbs More Effective
+                    </h2>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-6">
+                        Traditional herbs often face absorption challenges in the modern body. Discover how
+                        nano-encapsulation and phytosome technology help deliver active compounds more efficiently —
+                        lower dose, higher impact.
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors">
+                        Read Full Article
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Category Filters -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-emeraldDark text-gold border border-gold/40">
+                    All Posts
+                </button>
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-emeraldDark border border-gold/20 hover:border-gold/50 transition">
+                    Ayurveda
+                </button>
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-emeraldDark border border-gold/20 hover:border-gold/50 transition">
+                    Nanotechnology
+                </button>
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-emeraldDark border border-gold/20 hover:border-gold/50 transition">
+                    Wellness
+                </button>
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-emeraldDark border border-gold/20 hover:border-gold/50 transition">
+                    Lifestyle
+                </button>
+                <button
+                    class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-full bg-white text-emeraldDark border border-gold/20 hover:border-gold/50 transition">
+                    Seva & Dharma
+                </button>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Post 1 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldDark/90 relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">🌿</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Ayurveda</span>
+                            <span>•</span>
+                            <time>10 Aug 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            The Role of Agni (Digestive Fire) in Modern Lifestyle Disorders
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            Understanding why weak digestion is at the root of many contemporary health issues and how
+                            classical Ayurvedic principles still apply today.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldMedium relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">⚛️</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Nanotechnology</span>
+                            <span>•</span>
+                            <time>02 Aug 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            Why Bioavailability Matters More Than Dosage
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            Higher quantity does not always mean higher effect. Learn how nano-delivery systems change
+                            the game for herbal formulations.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldDark relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">🧘</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Wellness</span>
+                            <span>•</span>
+                            <time>28 Jul 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            Daily Routines (Dinacharya) for Better Energy & Clarity
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            Simple, time-tested morning and evening practices that support both body and mind in today’s
+                            fast-paced world.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldMedium relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">🩸</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Ayurveda</span>
+                            <span>•</span>
+                            <time>18 Jul 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            Supporting Healthy Blood Sugar the Ayurvedic Way
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            A look at classical herbs and modern research that help maintain balanced glucose levels
+                            naturally and safely.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldDark relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">🤝</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Seva & Dharma</span>
+                            <span>•</span>
+                            <time>05 Jul 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            Why We Practice Quiet Seva Without Publicity
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            The deeper philosophy behind serving tribal communities with free herbal support and why
+                            dignity matters more than visibility.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article
+                    class="bg-white border border-gold/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="h-44 bg-emeraldMedium relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <span class="relative text-4xl text-gold/50 font-serif">✨</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-3">
+                            <span class="text-gold font-semibold uppercase tracking-wider">Lifestyle</span>
+                            <span>•</span>
+                            <time>22 Jun 2026</time>
+                        </div>
+                        <h3
+                            class="font-serif font-bold text-emeraldDark text-lg mb-3 group-hover:text-gold transition-colors leading-snug">
+                            Choosing Pure Herbs: What “100% Botanical” Really Means
+                        </h3>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed mb-5 flex-grow">
+                            How to identify formulations free from synthetic fillers, heavy metals, and unnecessary
+                            additives — and why purity is non-negotiable.
+                        </p>
+                        <a href="#"
+                            class="text-xs font-bold uppercase tracking-widest text-emeraldDark hover:text-gold transition-colors inline-flex items-center gap-1.5">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Load More -->
+            <div class="mt-14 text-center">
+                <button
+                    class="px-8 py-3.5 bg-emeraldDark text-gold text-xs font-bold uppercase tracking-widest rounded-xl border border-gold/40 hover:bg-emeraldMedium hover:border-gold transition-all duration-300">
+                    Load More Articles
+                </button>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="bg-emeraldDark text-creme py-16 border-y border-gold/20 relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-3">
+                    Stay Connected with Wisdom
+                </h2>
+                <p class="text-sm text-creme/70 font-light mb-8 max-w-xl mx-auto">
+                    Receive thoughtful articles on Ayurveda, herbal science, and holistic living — delivered
+                    occasionally, never spam.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required
+                        class="flex-grow px-4 py-3 rounded-xl border border-gold/30 bg-emeraldMedium/50 text-sm text-creme placeholder-creme/40 focus:outline-none focus:border-gold transition">
+                    <button type="submit"
+                        class="px-6 py-3 bg-gold text-emeraldDark text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-goldLight transition">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-emeraldDark text-creme border-t border-gold/30 py-12 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-gold/20">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-3 mb-3 group">
+                        <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                            class="w-10 h-10 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
+                        <span class="font-serif text-xl font-bold text-gold">La Petals</span>
+                    </a>
+                    <p class="text-xs text-creme/70 leading-relaxed">
+                        Rajrajeshwari Lifescience Pvt. Ltd.<br>Bhopal, Madhya Pradesh, India
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Quick Links</h5>
+                    <ul class="space-y-2 text-xs text-creme/70">
+                        <li><a href="index.html" class="hover:text-gold transition">Home Page</a></li>
+                        <li><a href="products.html" class="hover:text-gold transition">Formulations & Products</a></li>
+                        <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-gold transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Certifications</h5>
+                    <p class="text-xs text-creme/70 mb-1">GMP Certified Facility</p>
+                    <p class="text-xs text-creme/70">AYUSH License: MP/25D/24/1157</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-creme/50 gap-4">
+                <p>&copy; 2026 Rajrajeshwari Lifescience Pvt. Ltd. All Rights Reserved.</p>
+                <p class="text-gold/80">Pure Herbs &amp; Secure Remedy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const drawerMenu = document.getElementById('drawerMenu');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleMenu() {
+            const isClosed = drawerMenu.classList.contains('translate-x-full');
+            if (isClosed) {
+                drawerMenu.classList.remove('translate-x-full');
+                drawerOverlay.classList.remove('hidden');
+                setTimeout(() => drawerOverlay.classList.remove('opacity-0'), 10);
+            } else {
+                drawerMenu.classList.add('translate-x-full');
+                drawerOverlay.classList.add('opacity-0');
+                setTimeout(() => drawerOverlay.classList.add('hidden'), 300);
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+            drawerOverlay.addEventListener('click', toggleMenu);
+        }
+    </script>
+    <script src="animations.js"></script>
+</body>
+
+</html>

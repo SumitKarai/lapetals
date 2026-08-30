@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
     <script>
         tailwind.config = {
             theme: {
@@ -40,7 +41,14 @@
         }
 
         .gold-glow {
-            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Form focus styles */
+        .form-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
         }
     </style>
 </head>
@@ -51,13 +59,10 @@
     <header class="bg-emeraldDark/95 backdrop-blur-md text-creme border-b border-gold/30 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3 group">
-
+                <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
+                    class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-3">
-                        <img src="assests/lapetals-bg-remove.png" alt="La Petals Logo"
-                            class="w-9 h-9 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
-                        <span class="text-xl font-serif font-bold text-gold">La Petals</span>
-                    </a>
+                    <span class="text-xl font-serif font-bold text-gold">La Petals</span>
                     <span class="text-[9px] tracking-widest text-creme/60 uppercase font-sans">Rajrajeshwari
                         Lifescience</span>
                 </div>
@@ -67,6 +72,7 @@
                 <a href="index.html" class="hover:text-gold transition-colors py-1">Home</a>
                 <a href="products.html" class="hover:text-gold transition-colors py-1">Products</a>
                 <a href="about.html" class="hover:text-gold transition-colors py-1">About Us</a>
+                <a href="blog.html" class="hover:text-gold transition-colors py-1">Blog</a>
                 <a href="contact.html" class="text-gold border-b-2 border-gold py-1">Contact</a>
             </nav>
 
@@ -111,6 +117,7 @@
                 class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Products</a>
             <a href="about.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">About
                 Us</a>
+            <a href="blog.html" class="text-creme/80 hover:text-gold transition py-2 border-b border-gold/10">Blog</a>
             <a href="contact.html" class="text-gold font-bold py-2 border-b border-gold/20">Contact</a>
         </nav>
         <div class="mt-auto p-6 border-t border-gold/20 bg-emeraldMedium/50">
@@ -119,6 +126,7 @@
             <p class="text-xs text-creme/70">AYUSH Lic: MP/25D/24/1157</p>
         </div>
     </div>
+
     <!-- Drawer Overlay -->
     <div id="drawerOverlay"
         class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[55] hidden opacity-0 transition-opacity duration-300">
@@ -126,7 +134,7 @@
 
     <main class="flex-grow">
         <!-- Hero Banner -->
-        <section class="relative bg-emeraldDark text-creme py-16 lg:py-20 overflow-hidden border-b border-gold/30">
+        <section class="relative bg-emeraldDark text-creme py-20 lg:py-24 overflow-hidden border-b border-gold/30">
             <div class="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none">
             </div>
@@ -136,184 +144,213 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <span
-                    class="px-3 py-1 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs font-semibold uppercase tracking-widest inline-block mb-4">
-                    Connect With Our Experts
+                    class="text-xs font-semibold uppercase tracking-widest text-gold bg-gold/10 border border-gold/30 px-3 py-1 rounded-full">
+                    Get In Touch
                 </span>
-                <h1 class="text-4xl sm:text-5xl font-serif font-extrabold text-creme tracking-tight">
-                    Get In <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-goldLight to-gold">Touch</span>
+                <h1
+                    class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-creme tracking-tight leading-tight max-w-3xl mx-auto">
+                    We’d Love to
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-goldLight to-gold">
+                        Hear From You
+                    </span>
                 </h1>
-                <p class="mt-4 text-base text-creme/80 max-w-xl mx-auto font-light leading-relaxed">
-                    Have questions about our nano-enhanced Ayurvedic formulations or commercial partnerships? Our team
-                    at Rajrajeshwari Lifescience is here to assist.
+                <p class="mt-6 text-base sm:text-lg text-creme/80 max-w-2xl mx-auto font-light leading-relaxed">
+                    Whether you have a question about our formulations, partnerships, or simply want to know more about
+                    Ayurveda with nanotechnology — we’re here to help.
                 </p>
             </div>
         </section>
 
-        <!-- Main Content Grid -->
+        <!-- Contact Content -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-                <!-- Contact Details Panel -->
-                <div class="lg:col-span-5 space-y-8">
+                <!-- Left: Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-emeraldDark mb-3">
+                            Reach Out to Us
+                        </h2>
+                        <p class="text-sm text-gray-600 font-light leading-relaxed">
+                            Rajrajeshwari Lifescience Pvt. Ltd. is based in Bhopal, Madhya Pradesh. Feel free to contact
+                            us through any of the channels below.
+                        </p>
+                    </div>
+
+                    <!-- Address Card -->
                     <div
-                        class="bg-emeraldDark p-8 rounded-3xl text-creme border border-gold/30 shadow-xl relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl pointer-events-none">
-                        </div>
-                        <h2 class="text-2xl font-serif font-bold text-gold mb-6 border-b border-gold/20 pb-4">Corporate
-                            Info</h2>
-
-                        <div class="space-y-6 text-sm font-light">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 text-gold">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0H9m4 0V5">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span
-                                        class="block text-xs uppercase font-semibold text-gold tracking-wider">Company</span>
-                                    <p class="font-medium text-creme mt-0.5">Rajrajeshwari Lifescience Pvt. Ltd.</p>
-                                    <p class="text-xs text-creme/60">Brand: La Petals</p>
-                                </div>
+                        class="bg-white border border-gold/20 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-emeraldDark flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
                             </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 text-gold">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span
-                                        class="block text-xs uppercase font-semibold text-gold tracking-wider">Headquarters</span>
-                                    <p class="font-medium text-creme mt-0.5">Bhopal, Madhya Pradesh, India</p>
-                                    <p class="text-xs text-creme/60">[Insert Full Registered Address]</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 text-gold">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="block text-xs uppercase font-semibold text-gold tracking-wider">Email
-                                        Inquiry</span>
-                                    <a href="mailto:info@rajrajeshwarilifescience.com"
-                                        class="font-medium text-creme hover:text-gold transition mt-0.5 block">info@rajrajeshwarilifescience.com</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 text-gold">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="block text-xs uppercase font-semibold text-gold tracking-wider">Direct
-                                        Line</span>
-                                    <a href="tel:+910000000000"
-                                        class="font-medium text-creme hover:text-gold transition mt-0.5 block">+91
-                                        [Insert Contact Number]</a>
-                                </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-emeraldDark text-base mb-1">Registered Office</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    Rajrajeshwari Lifescience Pvt. Ltd.<br>
+                                    Bhopal, Madhya Pradesh, India
+                                </p>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="mt-8 pt-6 border-t border-gold/20 flex flex-col gap-2">
-                            <span class="text-[10px] text-gold tracking-widest uppercase font-semibold">Regulatory
-                                Certifications</span>
-                            <span class="text-xs text-creme/80">• AYUSH License No.: MP/25D/24/1157</span>
-                            <span class="text-xs text-creme/80">• Good Manufacturing Practice (GMP) Certified</span>
+                    <!-- Email Card -->
+                    <div
+                        class="bg-white border border-gold/20 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-emeraldDark flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-emeraldDark text-base mb-1">Email</h3>
+                                <a href="mailto:info@lapetals.in"
+                                    class="text-sm text-gold hover:underline">info@lapetals.in</a> <br>
+                                <a href="mailto:admin@lapetals.in"
+                                    class="text-sm text-gold hover:underline">admin@lapetals.in</a>
+                                <p class="text-xs text-gray-500 mt-1">We typically reply within 24–48 hours</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div
+                        class="bg-white border border-gold/20 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-emeraldDark flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-emeraldDark text-base mb-1">Phone</h3>
+                                <a href="tel:+917000000000" class="text-sm text-gold hover:underline">+91 70000
+                                    00000</a>
+                                <p class="text-xs text-gray-500 mt-1">Mon – Sat · 10:00 AM – 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- License Card -->
+                    <div class="bg-emeraldDark border border-gold/30 rounded-2xl p-6 text-creme">
+                        <span
+                            class="text-[10px] text-gold tracking-widest uppercase font-semibold block mb-2">Certifications</span>
+                        <p class="text-sm font-medium text-gold mb-1">AYUSH License</p>
+                        <p class="text-xs text-creme/70 mb-3">MP/25D/24/1157</p>
+                        <p class="text-sm font-medium text-gold mb-1">GMP Certified Facility</p>
+                        <p class="text-xs text-creme/70">Quality & safety you can trust</p>
                     </div>
                 </div>
 
-                <!-- Modern Interactive Form -->
+                <!-- Right: Contact Form -->
                 <div class="lg:col-span-7">
-                    <div class="bg-white p-8 sm:p-10 rounded-3xl border border-gold/30 shadow-lg relative">
-                        <h3 class="text-2xl font-serif font-bold text-emeraldDark mb-2">Send Us A Message</h3>
-                        <p class="text-xs text-gray-500 mb-8">Fill out the details below and our herbal science
-                            consultants will respond within 24 hours.</p>
+                    <div class="bg-white border border-gold/20 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg">
+                        <h2 class="text-2xl font-serif font-bold text-emeraldDark mb-1">Send us a Message</h2>
+                        <p class="text-sm text-gray-500 mb-8">Fill out the form below and our team will get back to you
+                            shortly.</p>
 
-                        <form class="space-y-6" onsubmit="event.preventDefault();">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <form id="contactForm" class="space-y-5" onsubmit="return handleSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label
-                                        class="block text-xs font-semibold text-emeraldDark uppercase tracking-wider mb-2">Full
-                                        Name *</label>
-                                    <input type="text" placeholder="e.g. Dr. Rajesh Sharma" required
-                                        class="w-full bg-creme/30 border border-gray-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition">
+                                    <label for="name"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-emeraldDark mb-2">
+                                        Full Name <span class="text-gold">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" required
+                                        class="form-input w-full px-4 py-3 rounded-xl border border-gold/20 bg-creme/50 text-sm text-gray-800 placeholder-gray-400 transition"
+                                        placeholder="Your full name">
                                 </div>
                                 <div>
-                                    <label
-                                        class="block text-xs font-semibold text-emeraldDark uppercase tracking-wider mb-2">Email
-                                        Address *</label>
-                                    <input type="email" placeholder="name@example.com" required
-                                        class="w-full bg-creme/30 border border-gray-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition">
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label
-                                        class="block text-xs font-semibold text-emeraldDark uppercase tracking-wider mb-2">Phone
-                                        Number</label>
-                                    <input type="tel" placeholder="+91 98765 43210"
-                                        class="w-full bg-creme/30 border border-gray-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs font-semibold text-emeraldDark uppercase tracking-wider mb-2">Inquiry
-                                        Type</label>
-                                    <select
-                                        class="w-full bg-creme/30 border border-gray-200 px-4 py-3 rounded-xl text-sm text-gray-700 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition">
-                                        <option>General Information</option>
-                                        <option>Product & Dosage Query</option>
-                                        <option>Distribution & Dealership</option>
-                                        <option>Clinic / Doctor Bulk Supply</option>
-                                    </select>
+                                    <label for="phone"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-emeraldDark mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="form-input w-full px-4 py-3 rounded-xl border border-gold/20 bg-creme/50 text-sm text-gray-800 placeholder-gray-400 transition"
+                                        placeholder="+91 XXXXX XXXXX">
                                 </div>
                             </div>
 
                             <div>
-                                <label
-                                    class="block text-xs font-semibold text-emeraldDark uppercase tracking-wider mb-2">Message
-                                    *</label>
-                                <textarea rows="5" placeholder="How can we assist you with our formulations?" required
-                                    class="w-full bg-creme/30 border border-gray-200 p-4 rounded-xl text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition resize-none"></textarea>
+                                <label for="email"
+                                    class="block text-xs font-semibold uppercase tracking-wider text-emeraldDark mb-2">
+                                    Email Address <span class="text-gold">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gold/20 bg-creme/50 text-sm text-gray-800 placeholder-gray-400 transition"
+                                    placeholder="you@example.com">
+                            </div>
+
+                            <div>
+                                <label for="subject"
+                                    class="block text-xs font-semibold uppercase tracking-wider text-emeraldDark mb-2">
+                                    Subject
+                                </label>
+                                <select id="subject" name="subject"
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gold/20 bg-creme/50 text-sm text-gray-800 transition">
+                                    <option value="">Select a topic</option>
+                                    <option value="product">Product Enquiry</option>
+                                    <option value="order">Order / Distribution</option>
+                                    <option value="partnership">Business Partnership</option>
+                                    <option value="ayush">AYUSH / Regulatory</option>
+                                    <option value="other">General Enquiry</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message"
+                                    class="block text-xs font-semibold uppercase tracking-wider text-emeraldDark mb-2">
+                                    Message <span class="text-gold">*</span>
+                                </label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gold/20 bg-creme/50 text-sm text-gray-800 placeholder-gray-400 transition resize-none"
+                                    placeholder="Tell us how we can help you..."></textarea>
                             </div>
 
                             <button type="submit"
-                                class="w-full bg-emeraldDark text-gold font-bold py-4 rounded-xl hover:bg-emeraldMedium transition duration-300 shadow-md flex items-center justify-center gap-2 text-xs uppercase tracking-widest group">
+                                class="w-full sm:w-auto px-8 py-3.5 bg-emeraldDark text-gold font-semibold text-sm uppercase tracking-widest rounded-xl border border-gold/40 hover:bg-emeraldMedium hover:border-gold transition-all duration-300 flex items-center justify-center gap-2">
                                 Send Message
-                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </button>
                         </form>
+
+                        <!-- Success Message (hidden by default) -->
+                        <div id="formSuccess"
+                            class="hidden mt-6 p-4 rounded-xl bg-emeraldDark/5 border border-gold/30 text-center">
+                            <p class="text-sm font-medium text-emeraldDark">
+                                Thank you! Your message has been received. We’ll get back to you soon.
+                            </p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- Quick Note / Trust Bar -->
+        <section class="bg-emeraldDark/5 border-y border-gold/15 py-10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+                <p class="text-sm text-gray-600 font-light max-w-2xl mx-auto leading-relaxed">
+                    All enquiries are handled with confidentiality. For product-related questions, our team of Ayurvedic
+                    experts will guide you with authentic information based on traditional knowledge and modern
+                    research.
+                </p>
             </div>
         </section>
     </main>
@@ -328,8 +365,9 @@
                             class="w-10 h-10 object-contain rounded-full border border-gold/40 p-0.5 bg-emeraldDark">
                         <span class="font-serif text-xl font-bold text-gold">La Petals</span>
                     </a>
-                    <p class="text-xs text-creme/70 leading-relaxed">Rajrajeshwari Lifescience Pvt. Ltd.<br>Bhopal,
-                        Madhya Pradesh, India</p>
+                    <p class="text-xs text-creme/70 leading-relaxed">
+                        Rajrajeshwari Lifescience Pvt. Ltd.<br>Bhopal, Madhya Pradesh, India
+                    </p>
                 </div>
                 <div>
                     <h5 class="text-xs font-semibold uppercase tracking-widest text-gold mb-3">Quick Links</h5>
@@ -352,7 +390,9 @@
             </div>
         </div>
     </footer>
+
     <script>
+        // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const closeMenuBtn = document.getElementById('closeMenuBtn');
         const drawerMenu = document.getElementById('drawerMenu');
@@ -376,7 +416,28 @@
             closeMenuBtn.addEventListener('click', toggleMenu);
             drawerOverlay.addEventListener('click', toggleMenu);
         }
+
+        // Simple form handler (frontend only – replace with real backend later)
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('formSuccess');
+
+            // Basic validation already handled by HTML required attributes
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+
+            // Optional: reset after a few seconds if you want the form to reappear
+            // setTimeout(() => {
+            //     form.reset();
+            //     form.classList.remove('hidden');
+            //     success.classList.add('hidden');
+            // }, 5000);
+
+            return false;
+        }
     </script>
+    <script src="animations.js"></script>
 </body>
 
 </html>
